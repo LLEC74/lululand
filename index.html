@@ -1,20 +1,22 @@
-<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+﻿<!DOCTYPE html>
+<html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="keywords" content="lulu land, lulu-land, lulu, jumper, luna, berger australien, aussie, golden retriever" />
-    <meta name="description" content="LuLuLand. Bienvenue! Jumper & Luna �2018 Lululand.fr" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="keywords" content="lululand, lulu land, lulu-land, lulu, jumper, luna, berger australien, aussie, golden retriever" />
+    <meta name="description" content="LuLuLand. Bienvenue! Jumper &amp; Luna &copy; 2018 Lululand.fr" />
     
     <title>Lululand : Come and visit us!</title>
 </head>
-<style>
-body, html 
-{
-    height: 100%;
-    margin: 0;
+
+<style type="text/css" media="screen">
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
+
 
 .bgimg 
 {
@@ -33,81 +35,432 @@ body, html
     font-size: 25px;
 }
 
-.topleft 
-{
-    position: absolute;
-    top: 0;
-    left: 16px;
-   
+/* reset margin  */
+html, body {
+ margin: 0;
+ padding: 2px;
+ }
+
+body {
+    background-color: #E8F5F4;
+    font-family: arial, sans-serif;
+    font-size:90%;/* par defaut 100% de la taille paramétrée dans le navigateur */
+
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: dodgerblue;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+
+.btnNewTransaction {
+    border: none;
+    background-color: #2196F3;
+    color: white;
+    padding: 5px 20px;
+    font-size: 16px;
+    cursor: pointer;
+position: absolute;
+top:150px;
+ right: 20px;
+
+}
+
+.btnNewTransaction:hover {background: #0b7dda;}
+
+.haut {
+text-align:right;
 }
 
 .topright
 {
     position: absolute;
-    top: 0;
+    top: 105px;
     right: 16px;
    
 }
+/* Style the tab */
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #80B4B0;
+    width: 30%;
+    height: 1200px;
+}
 
-.logo
-{
+/* Style the buttons inside the tab */
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+    background-color: #ccc;
+  
+    font-weight: bold;
+
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 70%;
+    border-left: none;
+    height: 1200px;
+    background-color:#ADD1CE;
+}
+
+
+.header {
+  overflow: hidden;
+  background-color: #CED3D2;
+  padding: 20px 10px;
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 45px;
+  font-weight: bold;
+ font-family: Impact, "Arial Black", sans-serif;
+}
+
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+.footer {
+background-color:#F6F8F9;
+height: 50px;
+text-align:left;
+clear:both;
+
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+    content: '';
     position: absolute;
+    width: 6px;
+    background-color: white;
     top: 0;
-   left:16px;
-    color:#2f3542;
-    font-family: Impact, "Arial Black", sans-serif;
-    font-size: 65px;
-}
-
-.bottomleft 
-{
-    position: absolute;
     bottom: 0;
-    left: 16px;
-}
-
-.bottomright {
-    position: absolute;
-    bottom: 8px;
-    right: 16px;
-    font-size: 18px;
-}
-
-.middle 
-{
-    position: absolute;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    margin-left: -3px;
 }
 
-hr {
-    margin: auto;
-    width: 40%;
+/* Container around content */
+.container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
 }
+
+/* The circles on the timeline */
+.container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid #FF9F55;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+    left: 0;
+}
+
+/* Place the container to the right */
+.right {
+    left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+    
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+    left: -16px;
+}
+
+/* The actual content */
+.content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+   
+    font-size: 12px;
+}
+
+.copyright {
+    float: left;
+ font-weight:bold;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+ /* Place the timelime to the left */
+.timeline::after {
+    left: 31px;
+}
+
+
 </style>
+
+
 <body>
 
-<div class="bgimg">
- <div class="logo">
-   
- <p>LuLu<font color="#f6b93b">Land</font></p>  <!- couleur squash blosson ->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+<div class="header">
+  <a href="#default" class="logo">LuLu<font color="#f6b93b">Land</font></a>
+
+ 
+ 
+  <div class="header-right">
+    <a class="active" href="#home">Home</a>
+    <a href="mailto:llec74@gmail.com?subject=En provenance de LULULAND.fr">Contact</a>
+
+  </div>
 </div>
+
  <div class="topright">
 <img src="http://www.blogcounter4free.com/counter.php?page=www.lululand.fr&digits=4&unique=0" alt="page visitor counter" border="0;">
 </div>
- <div class="middle">
 
-    <h2 style="font-family:verdana;">COMING SOON</h2>
-    <hr>
-     <p id="demo" style="color:#d5f4ff";"font-size:80px">Site en construction...</p>
-  </div>
-  <div class="bottomleft">
-    <p>Merci pour votre visite !</p>
-  </div>
- <div class="bottomright">&copy; 2018 Lululand.fr </div>
+<p style="color:Grey">Bienvenue sur la page Lululand !</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openContent(event, 'JumperLuna')" id="defaultOpen">Jumper & Luna</button>
+  <button class="tablinks" onclick="openContent(event, 'Leschiots')">Les chiots</button>
+  <button class="tablinks" onclick="openContent(event, 'Comete')">Com&egrave;te</button>
+  <button class="tablinks" onclick="openContent(event, 'Gaia')">Ga&iuml;a</button>
+  <button class="tablinks" onclick="openContent(event, 'Lasko')">Lasko</button>
+  <button class="tablinks" onclick="openContent(event, 'Maylon')">Maylon</button>
+  <button class="tablinks" onclick="openContent(event, 'Ollafe')">Ollafe</button>
+  <button class="tablinks" onclick="openContent(event, 'Oslo')">Oslo</button>   
+  <button class="tablinks" onclick="openContent(event, 'Oups')">Oups</button>
+  <button class="tablinks" onclick="openContent(event, 'Sparkel')">Sparkel</button>
+
+</div>
+    
+<div id="JumperLuna" class="tabcontent">
+  <h3>Jumper et Luna</h3>
+<img src ="images/JumperLuna.jpg" alt="Jumper et Luna dans le pré">
+<img src ="images/Lesparents.png" alt="Jumper et Luna">
+</div>
+<div id="Leschiots" class="tabcontent">
+  <h3>Les chiots (portée de 8) - Nés le 28.02.2018 </h3>
+<img src ="images/Leschiots1.png" alt="Les chiots">
+<img src ="images/Leschiots2.png" alt="Les chiots">
+<img src ="images/Laportee.png" alt="Les chiots">
+</div>
+<div id="Comete" class="tabcontent">
+  <h3>Comète (M)</h3>
+<p>Le 21.04.2018 </p>
+<img src ="images/Comete(21-04).png" alt="Comète 21.04.18">
+<p>Le 27.03.2018 </p>
+<img src ="images/Comete(27-03).png" alt="Comète 27.03.18">
 </div>
 
+<div id="Gaia" class="tabcontent">
+<h3>Gaïa (F)</h3>
+<p>Le 21.04.2018 </p>
+<img src ="images/Gaia(21-04).png" alt="Gaïa 21.04.18">
+<p>Le 27.03.2018 </p>
+<img src ="images/Gaia(27-03).png" alt="Gaïa 27.03.18">
+</div>
+
+<div id="Lasko" class="tabcontent">
+<h3>Lasko (M)</h3>
+<p>Le 21.04.2018 </p>
+<img src ="images/Lasko(21-04).png" alt="Lasko 21.04.18">
+<p>Le 27.03.2018 </p>
+<img src ="images/Lasko(27-03).png" alt="Lasko 27.03.18">
+</div>
+
+<div id="Maylon" class="tabcontent">
+<h3>Maylon (M)</h3>
+<p>Le 21.04.2018 </p>
+<img src ="images/Maylon(21-04).png" alt="Maylon 21.04.18">
+<p>Le 27.03.2018 </p>
+<img src ="images/Maylon(27-03).png" alt="Maylon 27.03.18">
+</div>
+
+<div id="Ollafe" class="tabcontent">
+<h3>Ollafe (F)</h3>
+<p>Le 21.04.2018 </p>
+<img src ="images/Ollafe(21-04).png" alt="Ollafe 21.04.18">
+<p>Le 27.03.2018 </p>
+<img src ="images/Ollafe(27-03).png" alt="Ollafe 27.03.18">
+</div>
+
+<div id="Oslo" class="tabcontent">
+<h3>Oslo (M)</h3>
+<p>Le 21.04.2018 </p>
+<img src ="images/Oslo(21-04).png" alt="Oslo 21.04.18">
+<p>Le 27.03.2018 </p>
+<img src ="images/Oslo(27-03).png" alt="Oslo 27.03.18">
+</div>
+
+<div id="Oups" class="tabcontent">
+<h3>Oups (M)</h3>
+<p>Le 21.04.2018 </p>
+<img src ="images/Oups(21-04).png" alt="Oups 21.04.18">
+<p>Le 27.03.2018 </p>
+<img src ="images/Oups(27-03).png" alt="Oups 27.03.18">
+</div>
+
+<div id="Sparkel" class="tabcontent">
+<h3>Sparkel (M)</h3>
+<p>Le 21.04.2018 </p>
+<img src ="images/Sparkel(21-04).png" alt="Sparkel 21.04.18">
+<p>Le 27.03.2018 </p>
+<img src ="images/Sparkel(27-03).png" alt="Sparkel 27.03.18">
+</div>
+
+<div id="footer">
+<div class="copyright">
+
+<p>&copy; 2018 <span style="color:#0066ff">Lululand.fr</span></p>
+
+
+<script>
+function openContent(evt, contentName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(contentName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
+
+</script>
+     
 </body>
-</html>
+</html> 
