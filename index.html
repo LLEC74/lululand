@@ -1,4 +1,4 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -17,24 +17,6 @@
           box-sizing: border-box;
 }
 
-
-.bgimg 
-{
-    color:white;
-
-   
-    background-color:white;
-    background-image:url('/images/comingsoon/JumperLuna.jpg');
-
-
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-    position: relative;
-    font-family: "Courier New", Courier, monospace;
-    font-size: 25px;
-}
-
 /* reset margin  */
 html, body {
  margin: 0;
@@ -44,8 +26,37 @@ html, body {
 body {
     background-color: #E8F5F4;
     font-family: arial, sans-serif;
-    font-size:90%;/* par defaut 100% de la taille paramÃ©trÃ©e dans le navigateur */
+    font-size:100%;/* par defaut 100% de la taille paramétrée dans le navigateur */
+}
 
+.tooltip {
+    position: relative;
+    display: inline-block;
+
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
 }
 
 #myBtn {
@@ -76,9 +87,9 @@ body {
     padding: 5px 20px;
     font-size: 16px;
     cursor: pointer;
-position: absolute;
-top:150px;
- right: 20px;
+    position: absolute;
+    top:150px;
+    right: 20px;
 
 }
 
@@ -100,7 +111,7 @@ text-align:right;
     float: left;
     border: 1px solid #ccc;
     background-color: #80B4B0;
-    width: 30%;
+    width: 15%;
     height: 1200px;
 }
 
@@ -122,6 +133,9 @@ text-align:right;
 /* Change background color of buttons on hover */
 .tab button:hover {
     background-color: #ddd;
+ font-weight: bold;
+
+color:dodgerblue;
 }
 
 /* Create an active/current "tab button" class */
@@ -137,7 +151,7 @@ text-align:right;
     float: left;
     padding: 0px 12px;
     border: 1px solid #ccc;
-    width: 70%;
+    width: 85%;
     border-left: none;
     height: 1200px;
     background-color:#ADD1CE;
@@ -255,7 +269,6 @@ clear:both;
 }
 
 /* Add arrows to the right container (pointing left) */
-    
 .right::before {
     content: " ";
     height: 0;
@@ -318,13 +331,10 @@ clear:both;
  
   <div class="header-right">
     <a class="active" href="#home">Home</a>
-    <a href="mailto:llec74@gmail.com?subject=En provenance de LULULAND.fr">Contact</a>
+    <a href="mailto:llec74@gmail.com?subject=En provenance de LULULAND.fr" title="Envoyer un message!">Contact</a>
 
-  </div>
 </div>
-
- <div class="topright">
-<img src="http://www.blogcounter4free.com/counter.php?page=www.lululand.fr&digits=4&unique=0" alt="page visitor counter" border="0;">
+  </div>
 </div>
 
 <p style="color:Grey">Bienvenue sur la page Lululand !</p>
@@ -342,32 +352,38 @@ clear:both;
   <button class="tablinks" onclick="openContent(event, 'Sparkel')">Sparkel</button>
 
 </div>
-    
+
 <div id="JumperLuna" class="tabcontent">
   <h3>Jumper et Luna</h3>
-<img src ="images/JumperLuna.jpg" alt="Jumper et Luna dans le prÃ©">
+<p>Jumper - (M) Berger Autralien</p>
+<p>Luna   - (F) Golden Retriever</p>
+<img src ="images/JumperLuna.jpg" alt="Jumper et Luna dans le pré">
 <img src ="images/Lesparents.png" alt="Jumper et Luna">
 </div>
 <div id="Leschiots" class="tabcontent">
-  <h3>Les chiots (portÃ©e de 8) - NÃ©s le 28.02.2018 </h3>
-<img src ="images/Leschiots1.png" alt="Les chiots">
+  <h3>Les chiots (portée de 8) - Nés le 28.02.2018 </h3>
+<img src ="images/Leschiots1.png" alt="Les chiots" style="margin-right: 20px;">
 <img src ="images/Leschiots2.png" alt="Les chiots">
+<img src ="images/Laportee2.png" alt="Les chiots" style="margin-right: 20px;">
 <img src ="images/Laportee.png" alt="Les chiots">
 </div>
 <div id="Comete" class="tabcontent">
-  <h3>ComÃ¨te (M)</h3>
+  <h3>Comète (M)</h3>
 <p>Le 21.04.2018 </p>
-<img src ="images/Comete(21-04).png" alt="ComÃ¨te 21.04.18">
+
+<img src ="images/Comete(21-04).png" alt="Comète 21.04.18">
+
 <p>Le 27.03.2018 </p>
-<img src ="images/Comete(27-03).png" alt="ComÃ¨te 27.03.18">
+<img src ="images/Comete(27-03).png" alt="Comète 27.03.18">
+
 </div>
 
 <div id="Gaia" class="tabcontent">
-<h3>GaÃ¯a (F)</h3>
+<h3>Gaïa (F)</h3>
 <p>Le 21.04.2018 </p>
-<img src ="images/Gaia(21-04).png" alt="GaÃ¯a 21.04.18">
+<img src ="images/Gaia(21-04).png" alt="Gaïa 21.04.18">
 <p>Le 27.03.2018 </p>
-<img src ="images/Gaia(27-03).png" alt="GaÃ¯a 27.03.18">
+<img src ="images/Gaia(27-03).png" alt="Gaïa 27.03.18">
 </div>
 
 <div id="Lasko" class="tabcontent">
